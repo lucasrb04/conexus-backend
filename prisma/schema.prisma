@@ -1,0 +1,97 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = "postgresql://meuusuario:minhasenha@localhost:5432/meubanco"
+}
+
+model Professor {
+  id           String    @id @default(uuid())
+  nome         String
+  email        String    @unique
+  senha        String
+  departamento String
+  projetos     Projeto[]
+}
+
+model Aluno {
+  id         String      @id @default(uuid())
+  nome       String
+  email      String      @unique
+  senha      String
+  cursoId    String
+  curso      Curso       @relation(fields: [cursoId], references: [id])
+  periodo    Int
+  inscricoes Inscricao[]
+  curriculo  String? // Caminho/URL para o currículo
+}
+
+model Curso {
+  id             String           @id @default(uuid())
+  nome           String
+  alunos         Aluno[]
+  cursosProjetos CursosProjetos[]
+}
+
+enum ProjetoStatus {
+  ABERTO
+  FECHADO
+  EM_ANDAMENTO
+  CONCLUIDO
+}
+
+enum ProjetoTipo {
+  BOLSA_IC
+  ESTAGIO
+  MONITORIA
+  TRABALHO_VOLUNTARIO
+}
+
+model Projeto {
+  id             String           @id @default(uuid())
+  nome           String
+  descricao      String
+  professorId    String
+  professor      Professor        @relation(fields: [professorId], references: [id])
+  requisitos     String
+  vagas          Int
+  bolsa          Float?
+  dataInicio     DateTime
+  dataTermino    DateTime
+  inscricoes     Inscricao[]
+  cursosProjetos CursosProjetos[]
+  status         ProjetoStatus    @default(ABERTO) // Adicionado status
+  edital         String? // Caminho/URL para o edital
+  tipo           ProjetoTipo // Adicionado tipo
+}
+
+model CursosProjetos {
+  id        String  @id @default(uuid())
+  cursoId   String
+  projetoId String
+  curso     Curso   @relation(fields: [cursoId], references: [id])
+  projeto   Projeto @relation(fields: [projetoId], references: [id])
+
+  @@unique([cursoId, projetoId])
+}
+
+model Inscricao {
+  id            String   @id @default(uuid())
+  alunoId       String
+  projetoId     String
+  status        String
+  dataInscricao DateTime @default(now())
+  aluno         Aluno    @relation(fields: [alunoId], references: [id])
+  projeto       Projeto  @relation(fields: [projetoId], references: [id])
+  mensagem      String? // Mensagem do aluno
+}
+
+model Notificacao {
+  id           String   @id @default(uuid())
+  destinatario String // Alterado para destinatario (email ou telefone)
+  mensagem     String
+  tipo         String
+  dataEnvio    DateTime @default(now())
+}

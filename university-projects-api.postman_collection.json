@@ -1,0 +1,512 @@
+{
+  "info": {
+    "name": "University Projects API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "/",
+      "request": {
+        "url": "{{baseUrl}}/",
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "/professores",
+      "request": {
+        "url": "{{baseUrl}}/professores",
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"type\":\"object\",\"properties\":{\"nome\":{\"type\":\"string\",\"description\":\"Professor name\"},\"email\":{\"type\":\"string\",\"description\":\"Professor email\"},\"senha\":{\"type\":\"string\",\"description\":\"Professor password\"},\"departamento\":{\"type\":\"string\",\"description\":\"Professor department\"}},\"required\":[\"nome\",\"email\",\"senha\",\"departamento\"]}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "/professores",
+      "request": {
+        "url": "{{baseUrl}}/professores",
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "/professores/{id}",
+      "request": {
+        "url": "{{baseUrl}}/professores/{id}",
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "/professores/{id}",
+      "request": {
+        "url": "{{baseUrl}}/professores/{id}",
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"type\":\"object\",\"properties\":{}}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "/professores/{id}",
+      "request": {
+        "url": "{{baseUrl}}/professores/{id}",
+        "method": "DELETE",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Create a new student",
+      "request": {
+        "url": "{{baseUrl}}/alunos",
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"type\":\"object\",\"properties\":{\"nome\":{\"type\":\"string\",\"description\":\"Aluno name\",\"example\":\"John Doe\"},\"email\":{\"type\":\"string\",\"description\":\"Aluno email\",\"example\":\"john.doe@example.com\"},\"senha\":{\"type\":\"string\",\"description\":\"Aluno password\",\"example\":\"password123\"},\"cursoId\":{\"type\":\"string\",\"description\":\"Curso ID\",\"example\":\"uuid\"},\"periodo\":{\"type\":\"number\",\"description\":\"Aluno period\",\"example\":3}},\"required\":[\"nome\",\"email\",\"senha\",\"cursoId\",\"periodo\"]}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "List all students",
+      "request": {
+        "url": "{{baseUrl}}/alunos",
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Apply a student to a project",
+      "request": {
+        "url": "{{baseUrl}}/alunos/{alunoId}/projetos/{projetoId}/candidatar",
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get recommended projects for a student",
+      "request": {
+        "url": "{{baseUrl}}/alunos/{alunoId}/projetos/recomendados",
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get statistics for a student",
+      "request": {
+        "url": "{{baseUrl}}/alunos/{alunoId}/estatisticas",
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get a student by ID",
+      "request": {
+        "url": "{{baseUrl}}/alunos/{id}",
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Update a student",
+      "request": {
+        "url": "{{baseUrl}}/alunos/{id}",
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"type\":\"object\",\"properties\":{\"nome\":{\"type\":\"string\",\"description\":\"Aluno name\",\"example\":\"John Doe\"},\"email\":{\"type\":\"string\",\"description\":\"Aluno email\",\"example\":\"john.doe@example.com\"},\"senha\":{\"type\":\"string\",\"description\":\"Aluno password\",\"example\":\"password123\"},\"cursoId\":{\"type\":\"string\",\"description\":\"Curso ID\",\"example\":\"uuid\"},\"periodo\":{\"type\":\"number\",\"description\":\"Aluno period\",\"example\":3}}}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Delete a student",
+      "request": {
+        "url": "{{baseUrl}}/alunos/{id}",
+        "method": "DELETE",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Create a new course",
+      "request": {
+        "url": "{{baseUrl}}/courses/create",
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"type\":\"object\",\"properties\":{\"nome\":{\"type\":\"string\",\"description\":\"Course name\",\"example\":\"Computer Science\"}},\"required\":[\"nome\"]}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "List all courses",
+      "request": {
+        "url": "{{baseUrl}}/courses/getAll",
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get a course by ID",
+      "request": {
+        "url": "{{baseUrl}}/courses/get/{id}",
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Update a course",
+      "request": {
+        "url": "{{baseUrl}}/courses/{id}",
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"type\":\"object\",\"properties\":{\"nome\":{\"type\":\"string\",\"description\":\"Course name\",\"example\":\"Computer Science\"}}}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Delete a course",
+      "request": {
+        "url": "{{baseUrl}}/courses/{id}",
+        "method": "DELETE",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get project statistics per course",
+      "request": {
+        "url": "{{baseUrl}}/courses/statistics/projectss",
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Create a new project",
+      "request": {
+        "url": "{{baseUrl}}/projects/create",
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"type\":\"object\",\"properties\":{\"nome\":{\"type\":\"string\",\"description\":\"Project name\",\"example\":\"Desenvolvimento de um Sistema de Recomendação\"},\"descricao\":{\"type\":\"string\",\"description\":\"Project description\",\"example\":\"Este projeto tem como objetivo...\"},\"professorId\":{\"type\":\"string\",\"description\":\"Professor ID\",\"example\":\"uuid\"},\"requisitos\":{\"type\":\"string\",\"description\":\"Project requirements\",\"example\":\"Conhecimento em Python e Machine Learning\"},\"vagas\":{\"type\":\"number\",\"description\":\"Number of vacancies\",\"example\":2},\"bolsa\":{\"type\":\"number\",\"description\":\"Project scholarship value\",\"example\":400},\"dataInicio\":{\"format\":\"date-time\",\"type\":\"string\",\"description\":\"Project start date\",\"example\":\"2024-01-01\"},\"dataTermino\":{\"format\":\"date-time\",\"type\":\"string\",\"description\":\"Project end date\",\"example\":\"2024-12-31\"},\"tipo\":{\"type\":\"string\",\"description\":\"Project type\",\"enum\":[\"BOLSA_IC\",\"ESTAGIO\",\"MONITORIA\",\"TRABALHO_VOLUNTARIO\"],\"example\":\"BOLSA_IC\"},\"edital\":{\"type\":\"string\",\"description\":\"Project edital URL\",\"example\":\"http://example.com/edital.pdf\"}},\"required\":[\"nome\",\"descricao\",\"professorId\",\"requisitos\",\"vagas\",\"dataInicio\",\"dataTermino\",\"tipo\"]}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "List all projects",
+      "request": {
+        "url": "{{baseUrl}}/projects/getAll",
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get a project by ID",
+      "request": {
+        "url": "{{baseUrl}}/projects/get/{id}",
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Update a project",
+      "request": {
+        "url": "{{baseUrl}}/projects/{id}",
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"type\":\"object\",\"properties\":{\"nome\":{\"type\":\"string\",\"description\":\"Project name\",\"example\":\"Desenvolvimento de um Sistema de Recomendação\"},\"descricao\":{\"type\":\"string\",\"description\":\"Project description\",\"example\":\"Este projeto tem como objetivo...\"},\"professorId\":{\"type\":\"string\",\"description\":\"Professor ID\",\"example\":\"uuid\"},\"requisitos\":{\"type\":\"string\",\"description\":\"Project requirements\",\"example\":\"Conhecimento em Python e Machine Learning\"},\"vagas\":{\"type\":\"number\",\"description\":\"Number of vacancies\",\"example\":2},\"bolsa\":{\"type\":\"number\",\"description\":\"Project scholarship value\",\"example\":400},\"dataInicio\":{\"format\":\"date-time\",\"type\":\"string\",\"description\":\"Project start date\",\"example\":\"2024-01-01\"},\"dataTermino\":{\"format\":\"date-time\",\"type\":\"string\",\"description\":\"Project end date\",\"example\":\"2024-12-31\"},\"tipo\":{\"type\":\"string\",\"description\":\"Project type\",\"enum\":[\"BOLSA_IC\",\"ESTAGIO\",\"MONITORIA\",\"TRABALHO_VOLUNTARIO\"],\"example\":\"BOLSA_IC\"},\"edital\":{\"type\":\"string\",\"description\":\"Project edital URL\",\"example\":\"http://example.com/edital.pdf\"}}}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Delete a project",
+      "request": {
+        "url": "{{baseUrl}}/projects/{id}",
+        "method": "DELETE",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Register a new professor",
+      "request": {
+        "url": "{{baseUrl}}/auth/register/professor",
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"type\":\"object\",\"properties\":{\"nome\":{\"type\":\"string\",\"description\":\"Professor name\"},\"email\":{\"type\":\"string\",\"description\":\"Professor email\"},\"senha\":{\"type\":\"string\",\"description\":\"Professor password\"},\"departamento\":{\"type\":\"string\",\"description\":\"Professor department\"}},\"required\":[\"nome\",\"email\",\"senha\",\"departamento\"]}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Register a new student",
+      "request": {
+        "url": "{{baseUrl}}/auth/register/aluno",
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"type\":\"object\",\"properties\":{\"nome\":{\"type\":\"string\",\"description\":\"Aluno name\",\"example\":\"John Doe\"},\"email\":{\"type\":\"string\",\"description\":\"Aluno email\",\"example\":\"john.doe@example.com\"},\"senha\":{\"type\":\"string\",\"description\":\"Aluno password\",\"example\":\"password123\"},\"cursoId\":{\"type\":\"string\",\"description\":\"Curso ID\",\"example\":\"uuid\"},\"periodo\":{\"type\":\"number\",\"description\":\"Aluno period\",\"example\":3}},\"required\":[\"nome\",\"email\",\"senha\",\"cursoId\",\"periodo\"]}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Login",
+      "request": {
+        "url": "{{baseUrl}}/auth/login",
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"type\":\"object\",\"properties\":{\"email\":{\"type\":\"string\",\"description\":\"User email\",\"example\":\"john.doe@example.com\"},\"senha\":{\"type\":\"string\",\"description\":\"User password\",\"example\":\"password123\"},\"userType\":{\"type\":\"string\",\"description\":\"User role\",\"example\":\"admin\"}},\"required\":[\"email\",\"senha\",\"userType\"]}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      },
+      "response": []
+    }
+  ]
+}
